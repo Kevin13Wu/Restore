@@ -1,4 +1,5 @@
 import type { Product } from "../../app/models/product";
+import ProductList from "./ProductList";
 
 type Props = {
   products: Product[];
@@ -7,14 +8,7 @@ type Props = {
 export default function Catalog({ products }: Props) {
   return (
     <>
-      <ul>
-        {products.map((product) => (
-          <li key={product.id}>
-            <span>{product.name}</span>
-            <span>${product.price.toFixed(2)}</span>
-          </li>
-        ))}
-      </ul>
+      <ProductList products={products} />
     </>
   );
 }
